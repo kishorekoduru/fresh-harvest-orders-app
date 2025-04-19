@@ -13,6 +13,7 @@ import CheckoutPage from "./pages/CheckoutPage";
 import OrderConfirmationPage from "./pages/OrderConfirmationPage";
 import TrackOrderPage from "./pages/TrackOrderPage";
 import OrderDetailsPage from "./pages/OrderDetailsPage";
+import AboutPage from "./pages/AboutPage";
 
 // Admin pages
 import AdminDashboardPage from "./pages/admin/AdminDashboardPage";
@@ -39,6 +40,7 @@ const App = () => (
             <Route path="/order-confirmation/:orderId" element={<OrderConfirmationPage />} />
             <Route path="/track" element={<TrackOrderPage />} />
             <Route path="/track/:orderId" element={<OrderDetailsPage />} />
+            <Route path="/about" element={<AboutPage />} />
             
             {/* Admin routes */}
             <Route path="/admin" element={<AdminDashboardPage />} />
