@@ -1,4 +1,5 @@
 
+import React from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -20,6 +21,7 @@ import ProductDetailsPage from "./pages/ProductDetailsPage";
 import AdminDashboardPage from "./pages/admin/AdminDashboardPage";
 import AdminOrdersPage from "./pages/admin/AdminOrdersPage";
 import AdminOrderDetailsPage from "./pages/admin/AdminOrderDetailsPage";
+import AdminProductsPage from "./pages/admin/AdminProductsPage"; // Add this import
 
 // Context providers
 import { CartProvider } from "./context/CartContext";
@@ -48,6 +50,7 @@ const App = () => (
             <Route path="/admin" element={<AdminDashboardPage />} />
             <Route path="/admin/orders" element={<AdminOrdersPage />} />
             <Route path="/admin/orders/:orderId" element={<AdminOrderDetailsPage />} />
+            <Route path="/admin/products" element={<AdminProductsPage />} /> {/* Add this route */}
             
             {/* Catch-all route */}
             <Route path="*" element={<NotFound />} />
