@@ -45,9 +45,12 @@ const CheckoutForm = () => {
     setLoading(true);
     
     try {
-      // Send order data to API
+      // Send order data to API - ensure all required fields are present
       const order = await createOrder({
-        ...data,
+        buyerName: data.buyerName,
+        buyerEmail: data.buyerEmail,
+        buyerPhone: data.buyerPhone,
+        deliveryAddress: data.deliveryAddress,
         items: cart,
       });
       
