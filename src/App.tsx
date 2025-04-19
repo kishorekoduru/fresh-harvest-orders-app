@@ -14,6 +14,7 @@ import OrderConfirmationPage from "./pages/OrderConfirmationPage";
 import TrackOrderPage from "./pages/TrackOrderPage";
 import OrderDetailsPage from "./pages/OrderDetailsPage";
 import AboutPage from "./pages/AboutPage";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
 
 // Admin pages
 import AdminDashboardPage from "./pages/admin/AdminDashboardPage";
@@ -41,6 +42,7 @@ const App = () => (
             <Route path="/track" element={<TrackOrderPage />} />
             <Route path="/track/:orderId" element={<OrderDetailsPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/product/:productId" element={<ProductDetailsPage />} />
             
             {/* Admin routes */}
             <Route path="/admin" element={<AdminDashboardPage />} />

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Product } from '@/types/types';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
@@ -12,13 +13,22 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const { addToCart } = useCart();
+  const navigate = useNavigate();
   
-  const handleAddToCart = () => {
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.stopPropagation();
     addToCart(product, 1);
   };
   
+  const handleProductClick = () => {
+    navigate(`/product/${product.id}`);
+  };
+  
   return (
-    <Card className="product-card overflow-hidden">
+    <Card 
+      className="product-card overflow-hidden cursor-pointer hover:shadow-md transition-shadow"
+      onClick={handleProductClick}
+    >
       <div className="aspect-square relative overflow-hidden bg-gray-100">
         <img 
           src={product.image || 'https://via.placeholder.com/300?text=Product'} 
